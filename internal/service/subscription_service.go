@@ -29,11 +29,6 @@ func (s *SubscriptionService) Delete(id uint) error {
 	return s.Repo.Delete(id)
 }
 
-func (s *SubscriptionService) GetTotalCost(
-	userID string,
-	serviceName string,
-	start string,
-	end string,
-) (int, error) {
+func (s *SubscriptionService) GetTotalCost(userID, serviceName, start, end string) (int, error) {
 	return s.Repo.GetTotalCost(userID, serviceName, start, end)
 }

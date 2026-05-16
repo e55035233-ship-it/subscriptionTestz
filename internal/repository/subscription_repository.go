@@ -36,13 +36,7 @@ func (r *SubscriptionRepository) Delete(id uint) error {
 	return r.DB.Delete(&model.Subscription{}, id).Error
 }
 
-func (r *SubscriptionRepository) GetTotalCost(
-	userID string,
-	serviceName string,
-	start string,
-	end string,
-) (int, error) {
-
+func (r *SubscriptionRepository) GetTotalCost(userID, serviceName, start, end string) (int, error) {
 	var total int
 
 	query := r.DB.Model(&model.Subscription{}).
